@@ -15,7 +15,7 @@ variable "public_key" {
   type    = string
 }
 
-variable "ami_name" {
+variable "ami_id" {
   type    = string
 }
 
@@ -66,5 +66,5 @@ data "aws_vpcs" "my-vpc" {
 }
 
 data "aws_subnet_ids" "my-subnets" {
-  vpc_name = tolist(data.aws_vpcs.my-vpc.names)[0]
+  vpc_id = tolist(data.aws_vpcs.my-vpc.ids)[0]
 }
